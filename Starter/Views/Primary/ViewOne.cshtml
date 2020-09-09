@@ -1,0 +1,26 @@
+ @model Starter.Models.UserModel
+ <h1>View All</h1>
+<table class="table">
+    <thead>
+        <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">UserName</th>
+        <th scope="col">Age</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scrope="row">@Model.id</th>
+            <td>@Model.fName @Model.lName</td>
+            <td>@Model.userName</td>
+            <td>@Model.age</td>
+        </tr>      
+    </tbody>
+</table>
+<a asp-area="" asp-controller="Primary" asp-action="EditForm" asp-route-userID ="@Model.id">
+    <button class="btn btn-primary">Edit</button>
+</a>
+<a asp-area="" asp-controller="Primary" asp-action="DeleteUser" asp-route-userID ="@Model.id">
+    <button class="btn btn-danger">Delete</button>
+</a>

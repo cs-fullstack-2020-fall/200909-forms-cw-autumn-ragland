@@ -1,0 +1,29 @@
+@model Starter.Models.UserModel
+<h1>Add A New User</h1>
+@* add error messages *@
+@if(@ViewData["errors"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewData["errors"]
+    </div>
+}
+@using (@Html.BeginForm("AddUser", "Primary"))
+{
+    <div class="form-group">
+        @Html.LabelFor(writer => writer.fName)
+        @Html.TextBoxFor(writer => writer.fName, new { @class="form-control"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(writer => writer.lName)
+        @Html.TextBoxFor(writer => writer.lName, new { @class="form-control"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(writer => writer.age)
+        @Html.TextBoxFor(writer => writer.age, new { @class="form-control"})
+    </div>
+  <div class="form-group">
+      @Html.LabelFor(writer => writer.userName)
+      @Html.TextBoxFor(writer => writer.userName, new { @class = "form-control"})
+  </div>
+  <button type="submit" class="btn btn-primary"> Submit </button>
+}

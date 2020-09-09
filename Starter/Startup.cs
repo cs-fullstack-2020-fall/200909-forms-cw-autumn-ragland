@@ -54,7 +54,7 @@ namespace Starter
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Primary}/{action=Index}/{id?}");
+                    pattern: "{controller=Primary}/{action=ViewAll}/{id?}");
             });
         }
     }

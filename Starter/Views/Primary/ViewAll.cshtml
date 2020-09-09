@@ -1,0 +1,21 @@
+ @model Starter.DAO.StarterDbContext
+ <h1>View All</h1>
+    <table class="table">
+        <thead>
+            <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">UserName</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (UserModel user in @Model.users)
+        {
+            <tr>
+                <th scrope="row">@user.id</th>
+                <td> <a asp-area="" asp-controller="Primary" asp-action="ViewOne" asp-route-userID ="@user.id">@user.fName @user.lName</a> </td>
+                <td>@user.userName</td>
+            </tr>
+        }            
+        </tbody>
+    </table>
